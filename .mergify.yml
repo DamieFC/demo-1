@@ -35,6 +35,15 @@ pull_request_rules:
         add:
           - javascript
 
+  - name: assign PRs with Python files modified to sileht
+    conditions:
+      - files~=\.py$
+      - -closed
+    actions:
+      assign:
+        add_users:
+          - sileht
+
   - name: clean branches
     conditions: []
     actions:
